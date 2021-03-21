@@ -6,12 +6,12 @@ class Solution(object):
         :rtype: int
         """
         word = "balloon"
-        word_dict= Counter(word)
+        balloon_dict = Counter(word)
         text_dict = Counter(text)
         mult_factor =[]
 
 
-        for key,value in word_dict.items():
+        for key,value in balloon_dict.items():
             if key in text_dict and text_dict[key] >= value:
                 mult_factor.append(int(text_dict[key]/value))
             else:
