@@ -1,5 +1,5 @@
 from collections import Counter
-class Solution(object):
+class SolutionAnagram(object):
     def isAnagram(self, s, t):
         """
         :type s: str
@@ -24,5 +24,5 @@ class Solution(object):
         return True
 
 
-s=Solution()
+s=SolutionAnagram()
 print(s.isAnagram(s = "rat", t = "car"))
