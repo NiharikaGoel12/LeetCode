@@ -24,4 +24,4 @@ class Solution(object):
         return common_numbers
 
 s=Solution()
-print(s.nextGreaterElement(arr1=[1,2,9], arr2=[1,9], arr3=[1,3,4,5,9]))
+print(s.nextGreaterElement(arr1=[1,5,5], arr2=[3,4,5,5], arr3=[5,5,10,20]))
