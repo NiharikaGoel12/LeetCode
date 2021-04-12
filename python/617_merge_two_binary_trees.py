@@ -22,8 +22,13 @@ class Solution(object):
             return root1
         sum= root1.val + root2.val
         root = TreeNode(sum)
-        root.left= self.mergeTrees(root1.left, root2.left)
-        root.right=self.mergeTrees(root1.right, root2.right)
+        print("Start Calculating left for p = {} & q  {}:  ".format(root1.val, root2.val))
+        root.left = self.mergeTrees(root1.left, root2.left)
+        print("Done Calculating left done for p = {} & q  {}:  ".format(root1.val, root2.val))
+
+        print("Start Calculating right for p = {} & q  {}:  ".format(root1.val, root2.val))
+        root.right = self.mergeTrees(root1.right, root2.right)
+        print(" Done Calculating right for p = {} & q  {}:  ".format(root1.val, root2.val))
 
         return root
 
