@@ -13,13 +13,16 @@ class Solution(object):
         :rtype: TreeNode
         """
         if root is None:
-            return []
-        if root.val<val:
-            self.searchBST(root.right, val)
-        if root.val>val:
-            self.searchBST(root.left, val)
+            return None
 
+        if root.val == val:
+            return root
 
+        if root.val > val:
+            return self.searchBST(root.left, val)
+
+        else:
+            return self.searchBST(root.right, val)
 
 s=Solution()
 root=deserialize('[4,2,7,1,3]')
