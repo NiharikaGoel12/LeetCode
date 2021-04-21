@@ -10,4 +10,4 @@ class Solution(object):
         # return max(nums_dict.items(), key=operator.itemgetter(1))[0]
 
 s=Solution()
-print(s.majorityElement(nums = [3,2,3]))
+print(s.majorityElement(nums = [2,3,3,1,2]))
