@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Solution(object):
     def subarraySum(self, nums, k):
         """
@@ -5,29 +6,23 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        # count_occur=0
-        # p1=0
-        #
-        # while p1<len(nums):
-        #     if nums[p1]==k:
-        #         count_occur+=1
-        #     running_sum = nums[p1]
-        #     for j in range(p1+1, len(nums)):
-        #         if running_sum+nums[j]==k:
-        #             count_occur+=1
-        #         running_sum+=nums[j]
-        #     p1+=1
-        #
-        # return count_occur
-
+        cont_dict=defaultdict(int)
+        cont_dict[0]=1
         running_sum=0
-        running_list=[0]
-        for i in range(0,len(nums)):
-            running_sum +=nums[i]
-            running_list.append(running_sum)
+        result = 0
+
+        for each_num in nums:
+            running_sum +=each_num
+            if (running_sum-k) in cont_dict:
+                result = result + cont_dict[running_sum -k]
+            cont_dict[running_sum]= cont_dict[running_sum]+ 1
+
+        return result
 
 s=Solution()
-print(s.subarraySum(nums = [1,3,-3,1,2,3,-3,1], k = 3))
+print(s.subarraySum(nums = [1,2,3], k = 3))
+
+
 
 
 
